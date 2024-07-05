@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Player 1</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    
+    <style>
+        /* style.css */
+
+/* Animations */
+@keyframes fadeInUp {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes rotate {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+/* Styles */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    margin: 0;
+}
+
+header {
+    text-align: center;
+    margin-bottom: 20px;
+    animation: fadeInUp 1s ease-out;
+}
+
+.user-icon {
+    font-size: 48px;
+    color: #333;
+    animation: rotate 2s linear infinite;
+}
+
+.name-input {
+    padding: 10px;
+    margin: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    width: 200px;
+    font-size: 16px;
+    animation: fadeInUp 1s 0.5s ease-out forwards;
+    opacity: 0;
+}
+
+.button {
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+    animation: fadeInUp 1s 1s ease-out forwards;
+    opacity: 0;
+}
+
+.button:hover {
+    background-color: #0056b3;
+}
+
+.share-info {
+    text-align: center;
+    margin-top: 20px;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+    .name-input {
+        width: 80%;
+    }
+}
+
+</style>
+</head>
+<body>
+        <header>
+            <h1>Rocknet - Hand Gesture Recognition with RPS - Player 1</h1>
+        </header>
+        <iframe width="1425" height="800" src="https://www.youtube.com/embed/qRn282Wbk0s" title="How To Play Rock Paper Scissors?" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+       
+            <span><i class="fas fa-user user-icon"></i></span>
+            <input type="text" placeholder="Your name..." class="name-input">
+        </div>
+            <button class="button" id="startGameButton">START GAME</button>
+ 
+        <div class="share-info">
+            <p>Game ID: {{ game_id }}</p>
+            <p>Game URL: <a href="{{ game_url }}">{{ game_url }}</a></p>
+            <p>(Share or click to play)</p>
+        </div>
+
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const startButton = document.getElementById('startGameButton');
+            startButton.addEventListener('click', () => {
+                const playerName = document.querySelector('.name-input').value;
+                if (playerName.trim() === '') {
+                    alert('Please enter your name!');
+                } else {
+                    alert(`Welcome, ${playerName}! Let's start the game.`);
+                    window.location.href = '/game'; // Redirect to game page
+                }
+            });
+        });
+    </script>
+</body>
+</html>
