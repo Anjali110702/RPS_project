@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ROCKNET - Play Game</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+        @import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css');
+
+        body {
+            font-family: 'Roboto', sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            color: #333;
+            overflow: hidden;
+            position: relative;
+            background: url('data:image/svg+xml;charset=utf-8,%3Csvg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"%3E%3Cdefs%3E%3ClinearGradient id="grad1" x1="0%" y1="0%" x2="100%" y2="100%"%3E%3Cstop offset="0%" style="stop-color:%23000000;stop-opacity:1"/%3E%3Cstop offset="100%" style="stop-color:%23000000;stop-opacity:0.8"/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width="100%" height="100%" fill="url(%23grad1)"/%3E%3Ccircle cx="25" cy="25" r="20" fill="%23ffffff" fill-opacity="0.2"/%3E%3Ccircle cx="75" cy="25" r="20" fill="%23ffffff" fill-opacity="0.2"/%3E%3Ccircle cx="25" cy="75" r="20" fill="%23ffffff" fill-opacity="0.2"/%3E%3Ccircle cx="75" cy="75" r="20" fill="%23ffffff" fill-opacity="0.2"/%3E%3C/svg%3E') no-repeat center center fixed;
+            background-size: cover;
+        }
+
+        .header {
+            background-color: #ffffff;
+            color: #000000;
+            font-weight: bold;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.4);
+            padding: 15px 30px;
+            border-radius: 10px;
+            position: relative;
+            z-index: 2;
+            animation: fadeInDown 1s ease-in-out;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+
+        .navbar-left, .navbar-right {
+            display: flex;
+            gap: 15px;
+        }
+
+        .navbar a, .back-button, .navbar-right a {
+            text-decoration: none;
+            color: white;
+            font-weight: bold;
+            padding: 10px 20px;
+            border-radius: 5px;
+            background-color: #444444;
+            transition: background-color 0.3s ease-in-out, transform 0.3s ease-in-out;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .navbar a:hover, .back-button:hover, .navbar-right a:hover {
+            background-color: #000000;
+            transform: translateY(-3px);
+        }
+
+        .navbar a .icon, .back-button .icon {
+            margin-right: 8px;
+            color: #ffffff;
+        }
+
+        .footer {
+            background-color: rgba(255, 255, 255, 0.9);
+            color: #000000;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            text-align: center;
+            position: relative;
+            z-index: 2;
+            width: 100%;
+            max-width: 100%;
+            margin-top: 20px;
+            animation: fadeIn 2s ease-in-out;
+        }
+
+        .video-background {
+            position: absolute;
+            top: 100px; /* Adjusted to ensure it starts below the header */
+            bottom: 10px; /* Adjusted to ensure it ends above the footer */
+            left: 0;
+            width: 100%;
+            z-index: 1;
+            overflow: hidden;
+        }
+
+        .video-background img {
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: auto;
+            height: 100vh;
+            animation: fadeIn 2s ease-in-out;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <div class="navbar-left">
+            <a href="javascript:history.back()" class="back-button">
+                <i class="fas fa-arrow-left icon"></i>  
+            </a>
+        </div>
+        <h1>ROCKNET - Play Game</h1>
+        <div class="navbar-right">
+            <a href="{% url 'index' %}" class="navbar-link">
+                <i class="fas fa-home icon"></i> 
+            </a>
+            <a href="{% url 'about' %}" class="navbar-link">
+                <i class="fas fa-info icon"></i> 
+            </a>
+        </div>
+    </div>
+    <h1>Hand Gesture Game: {{ mode|title }} Mode</h1>
+    <div class="video-background">
+    <div>
+        {% if mode == 'friend' %}
+            <img src="{% url 'video_feed_friend' %}" width="640" height="480">
+        {% elif mode == 'computer' %}
+            <img src="{% url 'video_feed_computer' %}" width="640" height="480">
+        {% endif %}
+    </div>
+</body>
+</html>
+
+    </div>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    
+    <footer class="footer">
+        <p>Copyright &copy; 2024 | ROCKNET - Hand Gesture Recognition RPS</p>
+    </footer>
+</body>
+</html>
