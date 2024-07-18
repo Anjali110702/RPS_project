@@ -37,12 +37,14 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
+            align-content: justify;
             box-shadow: 0 4px 8px rgba(0,0,0,0.1);
         }
 
         .navbar-left, .navbar-right {
             display: flex;
             gap: 15px;
+            align-content: justify;
         }
 
         .navbar a, .back-button {
@@ -135,7 +137,7 @@
                 <i class="fas fa-arrow-left icon"></i>  
             </a>
         </div>
-        <h1>ROCKNET - About</h1>
+        <h1 style="align-content: justify;">ROCKNET - About</h1>
         <div class="navbar-right">
             <a href="{% url 'index' %}" class="navbar-link">
                 <i class="fas fa-home icon"></i> Home
@@ -146,16 +148,18 @@
         </div>
     </div>
 
-    <div class="content">
+    <div class="content" style="align-content: jusitfy;">
         <h2>About ROCKNET</h2>
-        <p>Welcome to ROCKNET, the ultimate hand gesture recognition game! Our platform allows you to play the classic game of Rock, Paper, Scissors using state-of-the-art hand gesture recognition technology. Compete against the computer or challenge your friends in a fun and interactive way.</p>
-        <p>Our mission is to bring the excitement of traditional games into the digital age with innovative technology and seamless user experience.</p>
-        <h3>Features:</h3>
-        <ul>
-            <li>Real-time hand gesture recognition</li>
-            <li>Single-player mode against the computer</li>
-            <li>Multiplayer mode to challenge your friends</li>
-            <li>Intuitive and user-friendly interface</li>
+        <p>Welcome to ROCKNET, the ultimate hand gesture recognition game!<br></p>
+
+        <p>Our platform allows you to play the classic game of Rock, Paper, Scissors using state-of-the-art hand gesture recognition technology.Compete against the computer or challenge your friends in a fun and interactive way.
+        Our mission is to bring the excitement of traditional games into the digital age with innovative technology and seamless user experience.</p>
+        <h2>Features:</h2>
+        <ul style="align-content: justify;">
+            Real-time hand gesture recognition.<br>
+            Single-player mode against the computer<br>
+            Multiplayer mode to challenge your friends.<br>
+            Intuitive and user-friendly interface.<br>
         </ul>
         <p>Thank you for visiting ROCKNET. We hope you enjoy playing the game as much as we enjoyed creating it!</p>
     </div>
